@@ -19,13 +19,14 @@ class UserController extends Controller
     public function login(Request $request): JsonResponse
     {
         $data = $request->only('email', 'password');
+        $user = User::where('email', $data['email'])->first();
 
-        if (!auth()->attempt($data))
+        if (!auth()->attempt($data) || !$user)
         {
             return $this->error('Email e/o password non validi', null, 422);
         }
 
-        $request->session()->regenerate();
+        auth()->guard('web')->login($user);
 
         return $this->success(null, null, 201);
     }
