@@ -2,8 +2,8 @@ import Api from "./Api";
 
 const CsrfToken = () => {
 
-    const getCookieToken = () => {
-        Api.get('/csrf-cookie')
+    const getCookieToken = async () => {
+        await Api.get('/csrf-cookie')
     }
 
     return {
