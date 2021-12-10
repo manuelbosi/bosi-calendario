@@ -1,26 +1,30 @@
 <template>
-  <div id="login-form">
-    <login-form></login-form>
+  <navbar></navbar>
+  <div class="container">
+    <h1>CALENDAR</h1>
   </div>
 </template>
 
 <script>
+import Navbar from "../components/Navbar";
 import {onBeforeMount, onBeforeUnmount} from "vue";
-import LoginForm from "../components/LoginForm";
 
 export default {
-  name: 'Home',
-  components: { LoginForm },
+  name: "Calendar",
+  components: { Navbar },
   setup() {
-
     onBeforeMount(() => {
-      document.getElementById('app').dataset.screen = 'home';
+      document.getElementById('app').dataset.screen = 'calendar';
     })
 
     onBeforeUnmount(() => {
       document.getElementById('app').dataset.screen = '';
     })
-
   }
+
 }
 </script>
+
+<style scoped>
+
+</style>

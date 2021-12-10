@@ -1,6 +1,7 @@
 /* LIBS */
 @import '~bootstrap/dist/css/bootstrap.css';
 @import "~nprogress/nprogress.css";
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
 
 /* CUSTOM */
 @import "global.css";
