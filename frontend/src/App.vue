@@ -23,5 +23,5 @@ export default {
 </script>
 
 <style>
-@import'~bootstrap/dist/css/bootstrap.css';
+@import "assets/css/app.css";
 </style>
