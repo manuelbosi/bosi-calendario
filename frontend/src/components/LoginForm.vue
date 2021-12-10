@@ -1,7 +1,7 @@
 <template>
-  <div id="login-form">
+  <div id="login-form" class="w-25 mx-auto">
     <h1>LOGIN FORM</h1>
-    <form @submit.prevent="login">
+    <form>
       <div class="mb-3">
         <label for="email" class="form-label">Indirizzo email</label>
         <input type="email" class="form-control" id="email" v-model="form.email">
@@ -10,23 +10,31 @@
         <label for="password" class="form-label">Password</label>
         <input type="password" class="form-control" id="password" v-model="form.password">
       </div>
-      <button type="submit" class="btn btn-primary">ACCEDI</button>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary w-100" @click.prevent="userLogin">ACCEDI</button>
+      </div>
     </form>
   </div>
 </template>
 
 <script>
+import useLoginForm from '../composables/useLoginForm'
+
 export default {
   name: "LoginForm",
-  data() {
+  setup() {
+
+    // const router = useRouter()
+    const { form, login } = useLoginForm()
+
+    // Login
+    const userLogin = () => login(form)
+
     return {
-      form: {email: null, password: null}
+      form,
+      userLogin
     }
-  },
-  methods: {
-    login() {
-      console.log(this.form.email, this.form.password)
-    }
+
   }
 }
 </script>
