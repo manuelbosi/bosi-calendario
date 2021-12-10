@@ -1,5 +1,6 @@
 <template>
   <div id="login-form">
+    <span>Accedi</span>
     <login-form></login-form>
   </div>
 </template>
@@ -24,3 +25,12 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+span {
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 50px;
+}
+</style>
