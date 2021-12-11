@@ -30,13 +30,7 @@ router.beforeEach((to, from, next) => {
         path: "/",
       });
     } else {
-      if (!isLogged()) {
-        next({
-          path: "/",
-        });
-      } else {
-        next();
-      }
+      next();
     }
   } else {
     next();
