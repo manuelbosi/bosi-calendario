@@ -7,6 +7,8 @@
 
 <script>
 import {onBeforeMount, onBeforeUnmount} from "vue";
+import {useStore} from "vuex";
+import {useRouter} from "vue-router";
 import LoginForm from "../components/LoginForm";
 
 export default {
@@ -16,6 +18,7 @@ export default {
 
     onBeforeMount(() => {
       document.getElementById('app').dataset.screen = 'home';
+      if (useStore().getters.getIsLogged) useRouter().push({name: 'Dashboard'})
     })
 
     onBeforeUnmount(() => {
