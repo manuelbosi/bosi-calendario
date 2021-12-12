@@ -7,7 +7,7 @@ import Customers from "../views/Customers";
 import Notes from "../views/Notes";
 
 const routes = [
-  { path: '/', name: 'Home', component: Home },
+  { path: '/', name: 'Home', component: Home, meta: { requiresAuth: false }  },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard, meta: { requiresAuth: true } },
   { path: '/calendar', name: 'Calendar', component: Calendar, meta: { requiresAuth: true } },
   { path: '/customers', name: 'Customers', component: Customers, meta: { requiresAuth: true } },
@@ -24,17 +24,22 @@ function isLogged() {
 }
 
 router.beforeEach((to, from, next) => {
-  if (to.matched.some((record) => record.meta.requiresAuth)) {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
     if (!isLogged()) {
-      next({
-        path: "/",
-      });
+      next({ path: '/login' });
+    } else {
+      next();
+    }
+  } else if (!to.matched.some(record => record.meta.requiresAuth)) {
+    if (isLogged()) {
+      next({ path: "/dashboard" });
     } else {
       next();
     }
   } else {
-    next({ path: '/dashboard'} );
+    next(); // make sure to always call next()!
   }
 });
+
 
 export default router
