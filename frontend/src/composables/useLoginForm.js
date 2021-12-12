@@ -11,12 +11,10 @@ export default function useLoginForm() {
     const login = async (form) => {
         await CsrfToken().getCookieToken()
         Api.post('/login', form).then((res) => {
-            console.log(res)
             if (res.status === 201) {
                 store.dispatch('setAuthenticated', true)
                 router.push({name: 'Dashboard'})
             }
-
         }).catch(err => {
             console.log(err)
         })
