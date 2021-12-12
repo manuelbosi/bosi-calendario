@@ -15,14 +15,14 @@
 </template>
 
 <script>
-import useLoginForm from '../composables/useLoginForm'
+import useUser from "../composables/useUser";
 
 export default {
   name: "LoginForm",
   setup() {
 
     // const router = useRouter()
-    const { form, login } = useLoginForm()
+    const { form, login } = useUser()
 
     // Login
     const userLogin = () => login(form)
