@@ -26,18 +26,18 @@ function isLogged() {
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAuth)) {
     if (!isLogged()) {
-      next({ path: '/login' });
+      next({ path: '/login' })
     } else {
-      next();
+      next()
     }
   } else if (!to.matched.some(record => record.meta.requiresAuth)) {
     if (isLogged()) {
-      next({ path: "/dashboard" });
+      next({ path: "/dashboard" })
     } else {
-      next();
+      next()
     }
   } else {
-    next(); // make sure to always call next()!
+    next()
   }
 });
 
