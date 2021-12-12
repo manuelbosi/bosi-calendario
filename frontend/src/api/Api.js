@@ -1,6 +1,8 @@
 import axios from "axios";
 import * as NProgress from "nprogress/nprogress";
-import User from "./User";
+import useUser from "../composables/useUser";
+
+const { logout } = useUser();
 
 const Api = axios.create({
     withCredentials: true,
@@ -18,7 +20,7 @@ Api.interceptors.response.use(response => {
     NProgress.done()
     return response
 }, (error) => {
-    if ([401,419].includes(error.response.status)) User().logout()
+    if ([401,419].includes(error.response.status)) logout()
 })
 
 export default Api
