@@ -4,6 +4,7 @@
     <navbar-link text="Calendario" icon="fas fa-calendar-alt" route="/calendar"></navbar-link>
     <navbar-link text="Clienti" icon="fas fa-users" route="/customers"></navbar-link>
     <navbar-link text="Note" icon="fas fa-clipboard" route="/notes"></navbar-link>
+    <navbar-link text="Impostazioni" icon="fas fa-cog" route="/settings"></navbar-link>
   </ul>
 </template>
 

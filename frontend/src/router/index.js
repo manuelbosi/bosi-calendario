@@ -1,11 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
 import store from "../store";
+import Home from '../views/Home.vue'
 import Dashboard from "../views/Dashboard";
 import Calendar from "../views/Calendar";
 import Customers from "../views/Customers";
 import Notes from "../views/Notes";
 import Main from "../views/Main";
+import Settings from "../views/Settings";
 
 const routes = [
   { path: '/', name: 'Home', component: Home, meta: { requiresAuth: false }  },
@@ -18,6 +19,7 @@ const routes = [
       { path: '/calendar', name: 'Calendar', component: Calendar, meta: { requiresAuth: true } },
       { path: '/customers', name: 'Customers', component: Customers, meta: { requiresAuth: true } },
       { path: '/notes', name: 'Notes', component: Notes, meta: { requiresAuth: true } },
+      { path: '/settings', name: 'Settings', component: Settings, meta: { requiresAuth: true } },
     ]
   },
 

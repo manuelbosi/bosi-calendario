@@ -58,6 +58,6 @@ a, a:hover {
 
 #app[data-screen="home"], #app[data-screen="dashboard"],
 #app[data-screen="calendar"], #app[data-screen="customers"],
-#app[data-screen="notes"] {
+#app[data-screen="notes"], #app[data-screen="settings"] {
     display: flex;
 }
