@@ -6,10 +6,16 @@
 
 <script>
 import NavbarMenu from "./NavbarMenu";
+import {onMounted} from "vue";
 
 export default {
   name: "Navbar",
-  components: { NavbarMenu }
+  components: { NavbarMenu },
+  setup() {
+    onMounted(() => {
+      console.log("navbar mounted")
+    })
+  }
 
 }
 </script>
