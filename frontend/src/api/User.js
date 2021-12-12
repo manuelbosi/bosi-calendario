@@ -8,6 +8,7 @@ const User = () => {
         Api.post('/logout').then(res => {
             if (res.status === 200) {
                 store.dispatch('setAuthenticated', false)
+                store.dispatch('setAuthenticatedUser', {})
                 router.push({name: 'Home'})
             }
         }).catch(err => {
