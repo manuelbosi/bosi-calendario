@@ -9,6 +9,8 @@ class Event extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name', 'color'];
+
     public function customer()
     {
         $this->belongsTo(Customer::class);
