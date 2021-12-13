@@ -13,6 +13,6 @@ class Customer extends Model
 
     public function events()
     {
-        $this->hasMany(Event::class);
+        return $this->hasMany(Event::class);
     }
 }
