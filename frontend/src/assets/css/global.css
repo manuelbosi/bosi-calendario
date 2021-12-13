@@ -1,6 +1,7 @@
 html, body, #app {
     height: 100%;
     width: 100%;
+    overflow: hidden;
 }
 
 textarea:focus,
@@ -54,6 +55,9 @@ a, a:hover {
     margin: 0;
     background: #F3F1F5;
     max-width: initial;
+}
+.container > * {
+    max-height: 100%;
 }
 
 #app[data-screen="home"], #app[data-screen="dashboard"],

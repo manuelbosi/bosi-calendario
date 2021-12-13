@@ -15,6 +15,7 @@ export default {
 
 <style scoped>
 .router-link-active.router-link-exact-active {
+  background: #08557a;
   border-right: 3px solid #ECB365;
 }
 li {
