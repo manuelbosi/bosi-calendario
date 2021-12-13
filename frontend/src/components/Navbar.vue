@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <navbar-menu class="pe-3 pt-3 ps-3 pt-3"></navbar-menu>
+    <navbar-menu></navbar-menu>
     <div id="user" class="p-2">
       <span v-if="user.name">{{ user.name }}</span>
       <i class="fa fa-power-off" @click="logout"></i>
@@ -54,6 +54,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10px;
 }
 
 i {

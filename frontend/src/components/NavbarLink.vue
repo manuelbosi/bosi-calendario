@@ -20,7 +20,7 @@ export default {
 }
 li {
   list-style-type: none;
-
+  margin: 10px 0;
 }
 a:hover, a:focus {
   background: #08557a;
@@ -36,6 +36,8 @@ li a {
   display: flex;
   align-items: center;
   transition: background 0.1s linear;
+  padding: 20px;
+  font-size: 20px;
 }
 li i {
   margin-right: 15px;

@@ -1,12 +1,12 @@
 <template>
   <form>
-    <div class="mb-3">
-      <label for="email" class="form-label">Indirizzo email</label>
-      <input type="email" class="form-control" id="email" v-model="form.email" autocomplete="off">
+    <div class="form-group">
+      <label for="email">Indirizzo email</label>
+      <input type="email" id="email" v-model="form.email" autocomplete="off">
     </div>
-    <div class="mb-3">
-      <label for="password" class="form-label">Password</label>
-      <input type="password" class="form-control" id="password" v-model="form.password" autocomplete="off">
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" v-model="form.password" autocomplete="off">
     </div>
     <div class="text-center">
       <button type="submit" class="btn btn-primary w-100" @click.prevent="userLogin">ACCEDI</button>
@@ -40,4 +40,18 @@ export default {
 form {
   width: 400px;
 }
+form label {
+  display: block;
+}
+form input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #666;
+  font-size: 16px;
+  border-radius: 5px;
+}
+form .form-group {
+  margin-bottom: 15px;
+}
+
 </style>
