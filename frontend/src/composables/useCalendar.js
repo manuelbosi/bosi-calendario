@@ -11,7 +11,7 @@ export default function useCalendar() {
         headerToolbar: {
             left: 'prev,next today',
             center: 'title',
-            right: 'dayGridMonth,timeGridWeek,timeGridDay'
+            right: 'dayGridMonth timeGridWeek timeGridDay'
         },
         buttonText: {
             today: 'oggi',
