@@ -15,6 +15,8 @@ class EventFactory extends Factory
     {
         return [
             'title' => $this->faker->words(3, true),
+            'date_start' =>  $this->faker->dateTimeBetween('+0 week', '+1 week'),
+            'date_end' =>  $this->faker->dateTimeBetween('+1 week', '+2 week'),
             'color' => $this->faker->hexColor()
         ];
     }
