@@ -8,17 +8,18 @@
       <label for="password">Password</label>
       <input type="password" id="password" v-model="form.password" autocomplete="off">
     </div>
-    <div class="text-center">
-      <button type="submit" class="btn btn-primary w-100" @click.prevent="userLogin">ACCEDI</button>
-    </div>
+    <Button :callback="userLogin" text="ACCEDI"></Button>
   </form>
 </template>
 
 <script>
 import useUser from "../composables/useUser";
+import Button from "./Button";
 
 export default {
   name: "LoginForm",
+  components: { Button },
+
   setup() {
 
     // const router = useRouter()
