@@ -1,6 +1,15 @@
 <template>
   <FullCalendar :options="calendarOptions" id="calendar"></FullCalendar>
-  <div id="add-event"><i class="fas fa-plus"></i></div>
+  <div id="add-event" @click="addEvent"><i class="fas fa-plus"></i></div>
+  <FadeTransition>
+    <Modal v-if="showModal" @close="closeModal($event)">
+      <template v-slot:title><h1>AGGIUNGI LAVORO</h1></template>
+      <template v-slot:body>MODAL CONTENT</template>
+      <template v-slot:footer>
+        <Button>SALVA</Button>
+      </template>
+    </Modal>
+  </FadeTransition>
 </template>
 
 <script>
@@ -8,17 +17,20 @@ import {onBeforeMount, onBeforeUnmount} from "vue";
 import '@fullcalendar/core/vdom' // solves problem with Vite
 import FullCalendar from '@fullcalendar/vue3'
 import useCalendar from "../composables/useCalendar";
+import Modal from "../components/Modal";
+import FadeTransition from "../components/FadeTransition";
+import Button from "../components/Button";
 
 export default {
   name: "Calendar",
-  components: { FullCalendar },
+  components: { FullCalendar, FadeTransition, Modal, Button },
   setup() {
 
     onBeforeMount(() => {
       document.getElementById('app').dataset.screen = 'calendar';
     })
 
-    const { calendarOptions } = useCalendar()
+    const { addEvent, closeModal, showModal, calendarOptions } = useCalendar()
 
     onBeforeUnmount(() => {
       document.getElementById('app').dataset.screen = '';
@@ -27,6 +39,9 @@ export default {
 
 
     return {
+      addEvent,
+      closeModal,
+      showModal,
       calendarOptions
     }
   }
@@ -56,4 +71,8 @@ export default {
 #add-event:hover {
   background-color: #073b5b;
 }
+
+
+
+
 </style>
