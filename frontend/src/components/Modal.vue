@@ -1,11 +1,11 @@
 <template>
-  <div class="modal-backdrop" role="dialog">
+  <div class="modal-backdrop one two three" role="dialog" @click="$emit('close', $event)">
     <div class="modal-content">
       <div class="modal-header">
         <slot name="title">
           MODAL TITLE
         </slot>
-        <div class="close-modal" @click="$emit('close')"><i class="fas fa-times"></i></div>
+        <div><i class="fas fa-times close-modal"></i></div>
       </div>
       <div class="modal-body">
         <slot name="body"></slot>
@@ -46,9 +46,6 @@ export default {
   height: 600px;
   background-color: #eee;
   border: 2px solid #08557a;
-  /*box-shadow: 0 0 5px 0 rgba(44,181,224,1);*/
-  /*-webkit-box-shadow: 0 0 5px 0 rgba(44,181,224,1);*/
-  /*-moz-box-shadow: 0 0 5px 0 rgba(44,181,224,1);*/
 }
 .close-modal {
   background-color: #1a202c;
