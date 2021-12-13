@@ -1,7 +1,10 @@
 import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
+import {ref} from "vue";
 
 export default function useCalendar() {
+
+    const showModal = ref(false)
 
     const calendarOptions = {
         plugins: [ dayGridPlugin, timeGridPlugin ],
@@ -22,7 +25,14 @@ export default function useCalendar() {
         }
     };
 
+    const addEvent = () => {
+        console.log("opening modal....")
+        showModal.value = true
+    }
+
     return {
+        addEvent,
+        showModal,
         calendarOptions
     }
 
