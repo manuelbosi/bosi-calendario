@@ -1,5 +1,7 @@
 <template>
-  <button @click.prevent="$props.callback">{{ $props.text }}</button>
+  <button @click.prevent="$props.callback">
+    <slot></slot>
+  </button>
 </template>
 
 <script>

@@ -8,7 +8,7 @@
       <label for="password">Password</label>
       <input type="password" id="password" v-model="form.password" autocomplete="off">
     </div>
-    <Button :callback="userLogin" text="ACCEDI"></Button>
+    <Button :callback="userLogin">ACCEDI</Button>
   </form>
 </template>
 
