@@ -56,7 +56,7 @@ a, a:hover {
     background: #F3F1F5;
     max-width: initial;
 }
-.container > * {
+.container-fluid > * {
     max-height: 100%;
 }
 
