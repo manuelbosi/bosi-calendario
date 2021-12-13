@@ -13,4 +13,9 @@ class Event extends Model
     {
         $this->belongsTo(Customer::class);
     }
+
+    public function user()
+    {
+        $this->belongsTo(User::class);
+    }
 }
