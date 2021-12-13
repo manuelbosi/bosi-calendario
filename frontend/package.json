@@ -14,7 +14,6 @@
     "@fullcalendar/timegrid": "^5.10.1",
     "@fullcalendar/vue3": "^5.10.1",
     "axios": "^0.24.0",
-    "bootstrap": "^5.1.3",
     "core-js": "^3.6.5",
     "js-cookie": "^3.0.1",
     "nprogress": "^0.2.0",
