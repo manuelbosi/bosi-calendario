@@ -65,7 +65,7 @@ export default function useCalendar() {
     return {
         customers,
         getEvents,
-        addEvent,
+        openAddEventModal,
         closeModal,
         showModal,
         calendarOptions
