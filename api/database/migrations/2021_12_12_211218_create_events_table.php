@@ -18,8 +18,8 @@ class CreateEventsTable extends Migration
             $table->foreignId('customer_id')->constrained();
             $table->foreignId('user_id')->constrained();
             $table->string('title', 150);
-            $table->date('date_start');
-            $table->date('date_end');
+            $table->date('start');
+            $table->date('end');
             $table->string('color', 7);
             $table->timestamps();
         });
