@@ -43,7 +43,7 @@ export default {
 .modal-content {
   padding: 10px;
   width: 600px;
-  height: 600px;
+  /*height: 600px;*/
   background-color: #eee;
   border: 2px solid #08557a;
 }
