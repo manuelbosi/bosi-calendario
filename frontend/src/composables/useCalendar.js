@@ -14,6 +14,19 @@ export default function useCalendar() {
         initialView: 'dayGridMonth',
         locale: 'it',
         themeSystem: 'bootstrap',
+        defaultAllDay: true,
+        dayMaxEventRows: true,
+        views: {
+            dayGridMonth: {
+                dayMaxEventRows: 4 // adjust to 6 only for timeGridWeek/timeGridDay
+            }
+        },
+        moreLinkContent: (args) => {
+            return `+${args.num} lavori`
+        },
+        moreLinkClick: (info) => {
+            console.log(info)
+        },
         headerToolbar: {
             left: 'prev,next today',
             center: 'title',
