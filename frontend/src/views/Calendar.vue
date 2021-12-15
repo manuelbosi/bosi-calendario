@@ -1,6 +1,6 @@
 <template>
   <FullCalendar :options="calendarOptions" id="calendar"></FullCalendar>
-  <div id="add-event" @click="addEvent"><i class="fas fa-plus"></i></div>
+  <div id="add-event" @click="openAddEventModal"><i class="fas fa-plus"></i></div>
   <FadeTransition>
     <Modal v-if="showModal" @close="closeModal($event)">
       <template v-slot:title><h1>AGGIUNGI LAVORO</h1></template>
@@ -26,6 +26,8 @@ export default {
   components: { FullCalendar, FadeTransition, Modal, Button },
   setup() {
 
+    const { customers, getEvents, openAddEventModal, closeModal, showModal, calendarOptions } = useCalendar()
+
     onBeforeMount(() => {
       getEvents()
       document.getElementById('app').dataset.screen = 'calendar';
@@ -40,7 +42,7 @@ export default {
     return {
       customers,
       getEvents,
-      addEvent,
+      openAddEventModal,
       closeModal,
       showModal,
       calendarOptions
