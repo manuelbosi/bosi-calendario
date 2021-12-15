@@ -1,13 +1,15 @@
 import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
-import {ref} from "vue";
-// import Utils from "../utils";
+import {reactive, ref} from "vue";
+import Api from "../api/Api";
+import useCustomers from "./useCustomers";
 
 export default function useCalendar() {
 
     const showModal = ref(false)
+    const { customers, getCustomers } = useCustomers()
 
-    const calendarOptions = {
+    const calendarOptions = reactive({
         plugins: [ dayGridPlugin, timeGridPlugin ],
         initialView: 'dayGridMonth',
         locale: 'it',
@@ -23,10 +25,21 @@ export default function useCalendar() {
             week: 'settimana',
             day: 'giorno',
             list: 'lista'
-        }
-    };
+        },
+        events: []
 
-    const addEvent = () => showModal.value = true
+    });
+
+    const getEvents = () => {
+        Api.get('event').then(res => {
+            calendarOptions.events = res.data.data
+        })
+    }
+
+    const addEvent = () => {
+        getCustomers()
+        showModal.value = true
+    }
 
     const closeModal = (e) => {
         const canClose = [
@@ -37,6 +50,8 @@ export default function useCalendar() {
     }
 
     return {
+        customers,
+        getEvents,
         addEvent,
         closeModal,
         showModal,

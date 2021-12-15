@@ -27,10 +27,9 @@ export default {
   setup() {
 
     onBeforeMount(() => {
+      getEvents()
       document.getElementById('app').dataset.screen = 'calendar';
     })
-
-    const { addEvent, closeModal, showModal, calendarOptions } = useCalendar()
 
     onBeforeUnmount(() => {
       document.getElementById('app').dataset.screen = '';
@@ -39,6 +38,8 @@ export default {
 
 
     return {
+      customers,
+      getEvents,
       addEvent,
       closeModal,
       showModal,
