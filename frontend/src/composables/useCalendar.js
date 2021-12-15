@@ -49,7 +49,7 @@ export default function useCalendar() {
         })
     }
 
-    const addEvent = () => {
+    const openAddEventModal = () => {
         getCustomers()
         showModal.value = true
     }
